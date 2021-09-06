@@ -11,17 +11,18 @@
 
 </head>
 <body>
-    <input placeholder="first name"></input>
-    <input placeholder="last name"></input>
-    <input placeholder="ID number"></input>
-    <input placeholder="job title"></input>
-    <input placeholder="annual salary"></input>
-
-
-<!-- The application should have an input form that collects _employee first name, last name, ID number, job title, annual salary_.
-
-A 'Submit' button should collect the form information, store the information to calculate monthly costs, append information to the DOM and clear the input fields. Using the stored information, calculate monthly costs and append this to the to DOM. If the total monthly cost exceeds $20,000, add a red background color to the total monthly cost.
-
-Create a delete button that removes an employee from the DOM. For Base mode, it does **not** need to remove that Employee's salary from the reported total. -->
+    <h1>Salary Calculator</h1>
+    <h2>Add Employee</h2>
+    <h3>Budget: $<span id="budgetOut"></span></h3>
+    <input type="text" placeholder="first name" id="firstNameIn"></input>
+    <input type="text" placeholder="last name" id="lastNameIn"></input>
+    <input type="text" placeholder="ID number" id="idNumberIn"></input>
+    <input type="text" placeholder="job title" id="jobTitleIn"></input>
+    <input type="number" placeholder="annual salary" id="annualSalaryIn"></input>
+        <button id="addEmployeeButton">Submit</button>
+    <h3>Employees</h3>
+    <ul id="employeesOut">
+    </ul>
+    <H3>Total Monthly: $<span id="remainingBudgetOut"></span></H3>
 </body>
 </html>
