@@ -22,7 +22,7 @@ function addEmployee(){
     let newEmployee = {
         firstName: $('#firstNameIn').val(),
         lastName: $('#lastNameIn').val(),
-        idNumber: $('#idNumberIn').val(),
+        idNumber: Number($('#idNumberIn').val()),
         jobTitle: $('#jobTitleIn').val(),
         annualSalary: $('#annualSalaryIn').val()
     }
@@ -56,7 +56,9 @@ function calculateTotalCost(){
     //create an if statement to turn color red if the total cost is over $20000
     if(totalSalaries>budget){
         el.css("background", "red");
-
+    }
+    else{
+        el.css("background", "white");
     }
 }
 
@@ -73,7 +75,7 @@ function displayEmployees(){
         <tr>
             <td> ${employee.firstName} </td>
             <td> ${employee.lastName}</td>
-            <td> ${employee.idNumber}</td>
+            <td class="idNum"> ${employee.idNumber}</td>
             <td> ${employee.jobTitle}</td>
             <td> ${employee.annualSalary}</td>
             <td><button class="deleteRowButton">Remove</button></td>
@@ -83,7 +85,18 @@ function displayEmployees(){
 }//end displayEmployees
 
 
+
 function deleteRow(){
     console.log("delete");
     $(this).parent().parent().remove();
+    let removedEmployee = Number($(this).parent().parent().find('.idNum').text());
+    console.log("Employee to Delete", removedEmployee);
+    let holdEmployees=[];
+    for (i=0; i<employees.length; i++){
+        if(removedEmployee !== employees[i].idNumber){
+            holdEmployees.push(employees[i]);
+        }//end if
+    }//end for 
+    employees = holdEmployees;
+    calculateTotalCost();
 }
