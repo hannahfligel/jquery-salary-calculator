@@ -1,5 +1,18 @@
 $( document ).ready( readyNow );
 
+function readyNow(){
+    //display budget 
+    //target budgetOut by id 
+    let el = $( '#budgetOut' );
+    el.empty();
+    el.append( budget );
+    //handle click event
+    $( '#addEmployeeButton' ).on( 'click', addEmployee ); 
+    //init display
+    calculateTotalCost();
+    $( '.tableRow' ).on( 'click', '.deleteRowButton', deleteRow)
+}//end readyNow
+
 const budget = 20000;
 let employees = [];
 
@@ -63,20 +76,14 @@ function displayEmployees(){
             <td> ${employee.idNumber}</td>
             <td> ${employee.jobTitle}</td>
             <td> ${employee.annualSalary}</td>
-         </tr>` );
+            <td><button class="deleteRowButton">Remove</button></td>
+        </tr>` );
     }//end for of
+    
 }//end displayEmployees
 
-function readyNow(){
-    //display budget 
-    //target budgetOut by id 
-    let el = $( '#budgetOut' );
-    el.empty();
-    el.append( budget );
-    //handle click event
-    $( '#addEmployeeButton' ).on( 'click', addEmployee ); 
-    //init display
-    calculateTotalCost();
-}//end readyNow
 
-
+function deleteRow(){
+    console.log("delete");
+    $(this).parent().parent().remove();
+}
