@@ -50,13 +50,20 @@ function calculateTotalCost(){
 function displayEmployees(){
     console.log( 'in displayEmployees ');
     //target output by ID 
-    let el = $('#employeesOut');
+    let el = $('.tableRow');
     //empty
     el.empty();
     //loop through purchses array
     for( employee of employees ){
     //for each purchase, create list item 
-    el.append(`<li> First Name: ` + employee.firstName + ` Last Name: ` + employee.lastName + ` ID Number: ` + employee.idNumber + ` Job Title: ` + employee.jobTitle +  ` Annual Salary: ` + employee.annualSalary +` </li>` );
+    el.append(`
+        <tr>
+            <td> ${employee.firstName} </td>
+            <td> ${employee.lastName}</td>
+            <td> ${employee.idNumber}</td>
+            <td> ${employee.jobTitle}</td>
+            <td> ${employee.annualSalary}</td>
+         </tr>` );
     }//end for of
 }//end displayEmployees
 
@@ -71,4 +78,5 @@ function readyNow(){
     //init display
     calculateTotalCost();
 }//end readyNow
+
 
