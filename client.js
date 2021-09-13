@@ -58,7 +58,7 @@ function calculateTotalCost(){
         el.css("background", "red");
     }
     else{
-        el.css("background", "white");
+        el.css("background", "#F8F9FA");
     }
 }
 
@@ -78,7 +78,7 @@ function displayEmployees(){
             <td class="idNum"> ${employee.idNumber}</td>
             <td> ${employee.jobTitle}</td>
             <td> ${employee.annualSalary}</td>
-            <td><button class="deleteRowButton">Remove</button></td>
+            <td><button type="button" class="deleteRowButton btn btn-danger">Remove</button></td>
         </tr>` );
     }//end for of
     

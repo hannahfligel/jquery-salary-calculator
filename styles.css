@@ -1,3 +1,23 @@
 body{
-    background-color: #DBF2FF;
+    background-color: #ffffff;
+    padding-top: 2rem;
+}
+
+h1{
+    font-weight: bold;
+}
+
+.formBody{
+    border: 1px solid #F8F9FA;
+    background-color: #F8F9FA;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#monthlyTotal{
+    margin-right: 10px;
+}
+
+footer{
+    background-color: #F8F9FA;
 }
