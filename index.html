@@ -15,9 +15,9 @@
   <div class="container">
     <div class="card formBody">
       <h1>Salary Calculator</h1>
-      <h2>Add Employee</h2>
-      <h3>Budget: $<span id="budgetOut"></span></h3>
-      <div class="card-body">
+      <h2>Budget: $<span id="budgetOut"></span></h2>
+      <h3>Add Employee:</h3>
+      <div>
         <input type="text" placeholder="first name" id="firstNameIn">
         <input type="text" placeholder="last name" id="lastNameIn"></input>
         <input type="text" placeholder="ID number" id="idNumberIn"></input>
@@ -25,7 +25,10 @@
         <input type="number" placeholder="annual salary" id="annualSalaryIn"></input>
         <button type="button" class="btn btn-primary"  id="addEmployeeButton">+ Add Employee</button>
       </div>
-    </div>
+
+      <div id="alert">
+      </div>
+
     <h3>Employees</h3>
 
     <table class="table table-striped table-hover">

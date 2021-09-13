@@ -18,6 +18,8 @@ let employees = [];
 
 function addEmployee(){
     console.log('in addEmployee');
+    let alertEl = $('#alert');
+    alertEl.empty();
     //get user input create a new object
         let newEmployee = {
             firstName: $('#firstNameIn').val(),
@@ -28,7 +30,11 @@ function addEmployee(){
         }
         //push the new employee into the array 
         if(newEmployee.firstName === "" || newEmployee.lastName === "" || newEmployee.idNumber === 0 || newEmployee.jobTitle === "" || newEmployee.annualSalary === ""){
-            alert("One or more fields are missing!");
+            alertEl.append(`
+            <div class="alert alert-danger" role="alert">
+            One or more fields are missing!
+            </div>
+            `);
         }//end if
         else{
             employees.push(newEmployee);
