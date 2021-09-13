@@ -19,15 +19,21 @@ let employees = [];
 function addEmployee(){
     console.log('in addEmployee');
     //get user input create a new object
-    let newEmployee = {
-        firstName: $('#firstNameIn').val(),
-        lastName: $('#lastNameIn').val(),
-        idNumber: Number($('#idNumberIn').val()),
-        jobTitle: $('#jobTitleIn').val(),
-        annualSalary: $('#annualSalaryIn').val()
-    }
-    //push the new employee into the array 
-    employees.push(newEmployee);
+        let newEmployee = {
+            firstName: $('#firstNameIn').val(),
+            lastName: $('#lastNameIn').val(),
+            idNumber: Number($('#idNumberIn').val()),
+            jobTitle: $('#jobTitleIn').val(),
+            annualSalary: $('#annualSalaryIn').val()
+        }
+        //push the new employee into the array 
+        if(newEmployee.firstName === "" || newEmployee.lastName === "" || newEmployee.idNumber === 0 || newEmployee.jobTitle === "" || newEmployee.annualSalary === ""){
+            alert("One or more fields are missing!");
+        }//end if
+        else{
+            employees.push(newEmployee);
+        }//end else 
+
     //empty inputs 
     $('#firstNameIn').val('');
     $('#lastNameIn').val('');
@@ -70,20 +76,19 @@ function displayEmployees(){
     el.empty();
     //loop through purchses array
     for( employee of employees ){
-    //for each purchase, create list item 
-    el.append(`
-        <tr>
-            <td> ${employee.firstName} </td>
-            <td> ${employee.lastName}</td>
-            <td class="idNum"> ${employee.idNumber}</td>
-            <td> ${employee.jobTitle}</td>
-            <td> ${employee.annualSalary}</td>
-            <td><button type="button" class="deleteRowButton btn btn-danger">Remove</button></td>
-        </tr>` );
-    }//end for of
-    
-}//end displayEmployees
+        //for each purchase, create list item 
+            el.append(`
+                <tr>
+                    <td> ${employee.firstName} </td>
+                    <td> ${employee.lastName}</td>
+                    <td class="idNum"> ${employee.idNumber}</td>
+                    <td> ${employee.jobTitle}</td>
+                    <td> $${employee.annualSalary}</td>
+                    <td><button type="button" class="deleteRowButton btn btn-danger">Remove</button></td>
+                </tr>` );
 
+    }//end loop 
+}//end displayEmployees
 
 
 function deleteRow(){
@@ -100,3 +105,12 @@ function deleteRow(){
     employees = holdEmployees;
     calculateTotalCost();
 }
+
+
+
+
+
+//TO DO:
+//1. if nothing is entered, display an alert that nothing was entered 
+//2. no defult val for id number and salary 
+//3. alert if you go over budget 
