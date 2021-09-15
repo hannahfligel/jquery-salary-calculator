@@ -31,7 +31,7 @@ function addEmployee(){
         //push the new employee into the array 
         if(newEmployee.firstName === "" || newEmployee.lastName === "" || newEmployee.idNumber === 0 || newEmployee.jobTitle === "" || newEmployee.annualSalary === 0 ){
             alertEl.append(`
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger missingField" role="alert">
             One or more fields are missing!
             </div>
             `);
@@ -69,15 +69,18 @@ function calculateTotalCost(){
     el.append( totalSalaries );
     //create an if statement to turn color red if the total cost is over $20000
     if(totalSalaries>budget){
+        totalExceededAlert.empty();
         totalExceededAlert.append(`
         <div class="alert alert-danger center" role="alert">
         Budget exceeded!
         </div>
         `);
+
         totalMonthly.css("color", "red" );
     }
     else{
         totalMonthly.css("color", "black");
+        totalExceededAlert.empty();
     }
 }
 
@@ -122,8 +125,3 @@ function deleteRow(){
 
 
 
-
-//TO DO:
-//1. if nothing is entered, display an alert that nothing was entered 
-//2. no defult val for id number and salary 
-//3. alert if you go over budget 

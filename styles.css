@@ -30,3 +30,8 @@ footer{
     text-align: right;
     border: 0;
 }
+
+.missingField{
+    margin-top: 14px;
+    text-align: center;
+}
