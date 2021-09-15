@@ -18,16 +18,52 @@
       <h2>Budget: $<span id="budgetOut"></span></h2>
       <h3>Add Employee:</h3>
       <div>
-        <input type="text" placeholder="first name" id="firstNameIn">
+
+        <div class="row">
+          <div class="col">
+            <input id="firstNameIn" type="text" class="form-control" placeholder="First name" aria-label="First name">
+          </div>
+          <div class="col">
+            <input id="lastNameIn" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+          </div>
+          <div class="input-group mb-3 col">
+            <span class="input-group-text" id="basic-addon1">#</span>
+            <input id="idNumberIn" type="text" class="form-control" placeholder="ID number" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col">
+            <input id="jobTitleIn" placeholder="Job title" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+          </div>
+
+          <div class="input-group mb-3 col">
+            <span class="input-group-text">$</span>
+            <input id="annualSalaryIn" placeholder="Annual salary" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+            <span class="input-group-text">.00</span>
+          </div>
+          
+          <div class="flex-end">
+            <button type="button" class="btn btn-primary"  id="addEmployeeButton">+ Add Employee</button>
+          </div>
+        </div>
+        
+
+
+
+        <!-- <input type="text" placeholder="first name" id="firstNameIn"></input>
         <input type="text" placeholder="last name" id="lastNameIn"></input>
         <input type="text" placeholder="ID number" id="idNumberIn"></input>
         <input type="text" placeholder="job title" id="jobTitleIn"></input>
         <input type="number" placeholder="annual salary" id="annualSalaryIn"></input>
         <button type="button" class="btn btn-primary"  id="addEmployeeButton">+ Add Employee</button>
-      </div>
+      </div> -->
 
-      <div id="alert">
-      </div>
+
+      <div id="alert"></div>
+    </div> <!-- end formBody div -->
+
 
     <h3>Employees</h3>
 
@@ -47,6 +83,7 @@
 
       <footer>
         <h3 id="monthlyTotal" class="text-end">Total Monthly: $<span id="remainingBudgetOut"></span></h3>
+        <div id=totalExceeded></div>
       </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>

@@ -21,3 +21,12 @@ h1{
 footer{
     background-color: #F8F9FA;
 }
+
+.center{
+    text-align: center;
+}
+
+.flex-end{
+    text-align: right;
+    border: 0;
+}

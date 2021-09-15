@@ -29,7 +29,7 @@ function addEmployee(){
             annualSalary: $('#annualSalaryIn').val()
         }
         //push the new employee into the array 
-        if(newEmployee.firstName === "" || newEmployee.lastName === "" || newEmployee.idNumber === 0 || newEmployee.jobTitle === "" || newEmployee.annualSalary === ""){
+        if(newEmployee.firstName === "" || newEmployee.lastName === "" || newEmployee.idNumber === 0 || newEmployee.jobTitle === "" || newEmployee.annualSalary === 0 ){
             alertEl.append(`
             <div class="alert alert-danger" role="alert">
             One or more fields are missing!
@@ -63,11 +63,17 @@ function calculateTotalCost(){
     console.log('totalSalaries:', totalSalaries);
     //display remainingBudget
     let el = $('#remainingBudgetOut');
-    el.empty();
+    let totalExceededAlert= $(`#totalExceeded`);
+    el.empty(); 
     el.append( totalSalaries );
     //create an if statement to turn color red if the total cost is over $20000
     if(totalSalaries>budget){
-        el.css("background", "red");
+        totalExceededAlert.append(`
+        <div class="alert alert-danger center" role="alert">
+        Budget exceeded!
+        </div>
+        `);
+        el.css("background", "red" );
     }
     else{
         el.css("background", "#F8F9FA");
