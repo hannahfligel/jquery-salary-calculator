@@ -63,6 +63,7 @@ function calculateTotalCost(){
     console.log('totalSalaries:', totalSalaries);
     //display remainingBudget
     let el = $('#remainingBudgetOut');
+    let totalMonthly = $('#monthlyTotal');
     let totalExceededAlert= $(`#totalExceeded`);
     el.empty(); 
     el.append( totalSalaries );
@@ -73,10 +74,10 @@ function calculateTotalCost(){
         Budget exceeded!
         </div>
         `);
-        el.css("background", "red" );
+        totalMonthly.css("color", "red" );
     }
     else{
-        el.css("background", "#F8F9FA");
+        totalMonthly.css("color", "black");
     }
 }
 
