@@ -125,3 +125,8 @@ function deleteRow(){
 
 
 
+
+
+//stretch goals:
+//if id is not a number, return not all filled are filled 
+//
